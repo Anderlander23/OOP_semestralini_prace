@@ -1,5 +1,5 @@
-from models import Part, Welder, Inspector, Painter, Assembler
-from factory import ProductionLine
+from src.models import Part, Welder, Inspector, Painter, Assembler
+from src.factory import ProductionLine
 
 def run_simulation():
     # 1. Spuštění linky

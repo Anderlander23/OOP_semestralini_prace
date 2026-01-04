@@ -1,4 +1,4 @@
-from models import Part  # Potřebujeme znát strukturu dílu
+from src.models import Part  # Potřebujeme znát strukturu dílu
 
 class ProductionLine:
     """
