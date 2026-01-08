@@ -1,0 +1,24 @@
+# --- Pythonu specifické soubory ---
+# Ignoruje složky s přeloženým kódem (bytecode)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtuální prostředí ---
+# Pokud používáš venv, nechceš ho nahrávat (je příliš velký)
+venv/
+.venv/
+env/
+
+# --- Nastavení editorů ---
+# VS Code
+.vscode/
+# PyCharm
+.idea/
+
+# --- Operační systém ---
+.DS_Store
+Thumbs.db
+
+# --- Logy a dočasné soubory ---
+*.log
