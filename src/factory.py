@@ -2,7 +2,7 @@ from src.models import Part  # Potřebujeme znát strukturu dílu
 
 class ProductionLine:
     """
-    Tato třída řídí celou výrobní linku. 
+    Třída ProductionLine řídí celou výrobní linku. 
     Obsahuje seznam robotů a zajišťuje logiku předávání dílů mezi nimi.
     """
     def __init__(self):
@@ -36,7 +36,7 @@ class ProductionLine:
         for i in range(len(self.robots) - 1, -1, -1):
             current_robot = self.robots[i]
             
-            # Necháme robota pracovat (zavoláme jeho tick)
+            # Robot nechán pracovat (zavolán jeho tick)
             finished_part = current_robot.tick(dt)
             
             # Pokud robot právě dokončil práci na dílu:
@@ -47,15 +47,15 @@ class ProductionLine:
                 if i == len(self.robots) - 1:
                     self.finished_parts.append(finished_part)
                 else:
-                    # Jinak díl předáme dalšímu robotovi v seznamu
+                    # Jinak díl předán dalšímu robotovi v seznamu
                     next_robot = self.robots[i + 1]
                     next_robot.process(finished_part)
 
         # 2. Přísun nových dílů z fronty
-        # Pokud máme v hlavní frontě díly a první robot má místo, předáme mu ho
+        # Pokud jsou v hlavní frontě díly a první robot má místo je mu díl předán
         if self.input_queue and self.robots:
             first_robot = self.robots[0]
-            # Zkusíme předat první díl z fronty - index 0
+            # Pokus předat první díl z fronty - index 0
             if first_robot.process(self.input_queue[0]):
                 self.input_queue.pop(0)
 

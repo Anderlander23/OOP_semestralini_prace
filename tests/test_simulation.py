@@ -4,7 +4,7 @@ from src.models import Part, Welder, Inspector
 
 class TestRobotLogic(unittest.TestCase):
     """
-    Tato třída obsahuje sadu testů určených pro ověření základní logiky robotů.
+    Třída TestRobotLogic obsahuje sadu testů určených pro ověření základní logiky robotů.
     Každá metoda začínající 'test_' je automaticky spuštěna jako test.
     """
 

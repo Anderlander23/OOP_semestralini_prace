@@ -6,14 +6,14 @@ def run_simulation():
     line = ProductionLine()
 
     # 2. Vytvoření robotů
-    # Nastavení jmen a časů cyklů (sekundy)
+    # Nastavení jmen a časů cyklů v sekundách
     welder = Welder("Svářeč-01", cycle_time=3)
     inspector = Inspector("Kontrolor-01", cycle_time=2, success_rate=0.85)
     painter = Painter("Lakýrník-01", cycle_time=4)
     assembler = Assembler("Montážník-01", cycle_time=5)
 
     # 3. Sestavení linky
-    # Pořadí, v jakém roboty přidáme, určuje tok výroby
+    # Pořadí, v jakém jsou roboti přidáni do linky, určuje tok výroby
     line.add_robot(welder)
     line.add_robot(inspector)
     line.add_robot(painter)
@@ -28,7 +28,7 @@ def run_simulation():
     print("\n>>> START SIMULACE <<<")
     
     # 5. Simulační smyčka
-    # Simulujeme 40 sekund provozu
+    # Simulace 40-i sekund provozu
     for second in range(40):
         line.tick(dt=1)
         

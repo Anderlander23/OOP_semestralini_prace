@@ -4,13 +4,13 @@ from abc import ABC, abstractmethod
 # TŘÍDA PRO DÍLY
 class Part:
     """
-    Představuje nějaký díl, který se pohybuje po výrobní lince.
+    Třída Part představuje nějaký díl, který se pohybuje po výrobní lince.
     Každý díl má při tom své unikátní ID a typ, který určuje, kdo ho může zpracovat.
     """
     def __init__(self, part_id, part_type):
         self.part_id = part_id
         self.part_type = part_type
-        # Vytváří seznam pro ukládání historie aby bylo vidět kdo na tomto dílu pracoval a kdy to bylo
+        # Vytvoření seznamu pro ukládání historie z důvodu, aby bylo vidět kdo na tomto dílu pracoval a kdy to bylo
         self.history = []
 
     def __repr__(self):
@@ -35,8 +35,8 @@ class Robot(ABC):
 
     def process(self, part):
         """
-        Pokusí se přijmout díl do fronty. 
-        Vrátí True, pokud je díl přijat, jinak vrátí False (např. špatný typ).
+        Robot se pokusí přijmout díl do fronty. 
+        Vrátí True, pokud je díl přijatý, pokud ne, tak vrátí False (např. špatný typ).
         """
         if part.part_type == self.allowed_part_type:
             self.queue.append(part)
@@ -79,7 +79,7 @@ class Robot(ABC):
 class Welder(Robot):
     """Svářeč - první který na díl nastupuje - pracuje tedy na surových dílech."""
     def __init__(self, name, cycle_time):
-        # Zavoláme 'super' abychom přivolali rodičovskou třídu Robot a nastavíme typ na 'karoserie'
+        # 'super' abych byla přivolalána rodičovská třída Robot - nastaven typ na 'karoserie'
         super().__init__(name, cycle_time, "karoserie")
 
 class Inspector(Robot):
